@@ -49,7 +49,7 @@ namespace RedOwl.Editor
         {
             instance.GetType().WithAttr<UXMLAttribute>((attr) => {
                 string path = GetUXMLPath(instance, attr.path);
-                var layout = Resources.Load<VisualTreeAsset>(path);
+                var layout = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
                 if (layout != null)
                 {
                     //Debug.LogFormat("Loading '{0}.uxml' for '{1}'", path, instance.GetType().Name);
@@ -64,7 +64,7 @@ namespace RedOwl.Editor
             instance.GetType().WithAttr<USSAttribute>((attr) => {
                 string path = GetUSSPath(instance, attr.path);
                 //Debug.LogFormat("Adding '{0}.uss' to '{1}'", path, instance.GetType().Name);
-                element.styleSheets.Add(Resources.Load<StyleSheet>(path));
+                element.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>(path));
             },
             true);
         }

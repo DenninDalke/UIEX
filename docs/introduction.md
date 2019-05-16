@@ -126,7 +126,7 @@ namespace RedOwl.Demo {
         public void OnEnable()
         {
             var root = this.GetRootVisualContainer();
-            var visualTree = Resources.Load<VisualTreeAsset>(uxmlPAth);
+            var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPAth);
             visualTree.CloneTree(root, null);
             root.AddStyleSheetPath(ussPath);
 
